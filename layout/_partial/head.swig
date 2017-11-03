@@ -23,10 +23,18 @@
 
 {# Theme styling #}
 <link rel="stylesheet" type="text/css" href="{{ url_for('css/style.css') }}?v={{ theme.version }}" />
-<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
 {# Fancybox styling #}
 {% if theme.theme.fancybox %}
-  <link rel="stylesheet" type="text/css" href="{{ url_for('lib/fancybox/jquery.fancybox.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('lib/fancybox/jquery.fancybox.css') }}" />
+{% endif %}
+{# Google code prettify styling #}
+{% if theme.theme.prettify %}
+{% if theme.theme.prettifystyle %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('css/prettify')}}/{{ theme.theme.prettifystyle }}.css" >
+{% else %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('css/prettify/github-v2.min.css') }}" >
+{% endif %}
 {% endif %}
 
 {# Theme Configuration #}
