@@ -13,6 +13,10 @@
         } else {
           $backToTop.fadeOut(1000);
         }
+        // 3/4页面加载评论
+        if (!disqus_is_load && $(window).scrollTop() + $(window).height() > $(document).height() * 0.75) {
+          disqus.load();
+        }
       });
 
       $backToTop.click(function () {

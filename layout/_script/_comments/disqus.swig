@@ -4,7 +4,7 @@
   var disqus_identifier = '{{ page.path }}';
 
   var disqus_title = "{{ page.title|addslashes }}";
-
+  var disqus_is_load = false;
 
   var disqus = {
     load : function disqus(){
@@ -16,6 +16,7 @@
           (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
           }());
           $('#load-disqus').remove(); ///加载后移除按钮
+          disqus_is_load = true;
         }
     }
   }
